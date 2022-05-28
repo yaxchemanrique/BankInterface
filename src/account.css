@@ -1,0 +1,460 @@
+:root {
+	--clr-yellow: #f5b43e;
+	--clr-pink: #f468ce;
+	--clr-green: #40ecb0;
+	--clr-blue: #358fce;
+	--clr-purple: #5849b9;
+	--glass-bg: rgba(255, 255, 255, 0.2);
+
+	--clr-bg: #1c1e32;
+	--clr-bg-1: #272a46;
+
+	--gdt-pink-yellow: linear-gradient(29deg, #f5b43e 0%, #f468ce 98.66%);
+	--gdt-green-purple: linear-gradient(
+		29deg,
+		#40ecb0 0%,
+		#358fce 66.4%,
+		#5849b9 112.12%
+	);
+	--gdt-pink-purple: linear-gradient(29deg, #f468ce 0%, #5849b9 100%);
+
+	--fs-big-title: 7.5rem;
+	--fs-title: 2.25rem;
+	--fs-subtitle: 1.75rem;
+	--fs-form: 1.5rem;
+	--fs-125: 1.25rem;
+	--fs-text: 1.125rem;
+	--fs-small: 1rem;
+
+	--fw-700: 700;
+	--fw-600: 600;
+	--fw-500: 500;
+	--fw-400: 400;
+	--fw-300: 300;
+
+	--letter-spacing: 0.12rem;
+
+	--padding-btn: 0.625rem 1.5rem;
+	--padding-link: 0.75rem 1rem;
+
+	--br-boxes: 1.25rem;
+	--br-inputs: 0.5rem;
+	--br-btn: 0.5rem;
+
+	--border: 3px solid #fff;
+	--border-glass: 0px 0.5px 0.5px 0px;
+
+	--font-title: "Red Hat Mono", monospace;
+	--font-text: "Red Hat Display", sans-serif;
+
+	--shadow: 4px 4px 19px #141520;
+}
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+* > li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-family: var(--font-title);
+}
+
+svg {
+	fill: #fff;
+}
+
+body {
+	background-color: var(--clr-bg);
+	color: white;
+	font-family: var(--font-text);
+	height: calc(100vh - 5rem);
+}
+
+/*Grid dispaly*/
+.grid-container {
+	padding-top: 5rem;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: minmax(140px, auto);
+	gap: 2rem;
+}
+
+.user-greeting {
+	grid-column: 1 / span 5;
+}
+
+.transactions-card-container {
+	padding-inline: 4rem;
+	grid-column: 4 / span 3;
+	grid-row: 2 / span 4;
+	margin-left: 6rem;
+}
+
+.balance {
+	grid-column: 1 / 4;
+}
+
+.options-operations {
+	grid-column: 1;
+}
+
+.visa-card-container {
+	max-width: fit-content;
+	grid-column: 2 / span 2;
+	grid-row: 3 / 5;
+}
+/* end of grid set-up*/
+
+.flex-row {
+	display: flex;
+	align-items: center;
+	gap: 3em;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 1rem;
+}
+
+.nav-bar {
+	background-color: var(--clr-bg-1);
+	height: 5rem;
+	font-family: var(--font-title);
+}
+
+.container {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.flex-nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-link {
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	font-size: var(--fs-form);
+	font-weight: var(--fw-500);
+}
+
+.logo {
+	font-weight: var(--fw-700);
+}
+
+.greeting,
+.title {
+	font-size: var(--fs-title);
+	font-family: var(--font-title);
+	letter-spacing: var(--letter-spacing);
+}
+
+.subtitle,
+.transaction-day,
+.transaction-amount {
+	font-family: var(--font-title);
+	font-size: var(--fs-subtitle);
+	font-weight: var(--fw-500);
+}
+
+.btn-modal {
+	width: fit-content;
+	font-size: var(--fs-text);
+	font-weight: var(--fw-600);
+	background-color: var(--clr-bg-1);
+	color: #fff;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	padding: var(--padding-btn);
+	border-radius: var(--br-btn);
+}
+
+.glass-bg {
+	background-color: var(--glass-bg);
+	border-width: var(--border-glass);
+	border-color: #fff;
+	border-style: solid;
+	box-shadow: var(--shadow);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	border-radius: var(--br-boxes);
+}
+
+/*about the transactions card*/
+.transactions-card {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1.7rem;
+	padding: 3rem;
+}
+
+.transaction-item {
+	display: flex;
+	align-items: flex-end;
+	gap: 2rem;
+}
+
+.transaction-tag {
+	text-transform: capitalize;
+	margin-bottom: 0.9rem;
+	font-weight: var(--fw-500);
+}
+
+.transaction-number-account {
+	letter-spacing: 0.2em;
+}
+
+/*about the card*/
+.visa-card {
+	padding: 4rem 3.375rem;
+}
+
+.visa-number {
+	margin-top: 3rem;
+	margin-bottom: 1.75rem;
+}
+
+.visa-number,
+.user-full-name {
+	font-family: var(--font-title);
+	font-weight: var(--fw-500);
+	font-size: var(--fs-125);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	text-shadow: 3px 3px 7px rgba(28, 30, 50, 0.6);
+	min-width: 23ch;
+}
+
+.card-holder {
+	font-weight: var(--fw-400);
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	margin-bottom: 0.625rem;
+}
+
+/*  MODALS  */
+.deposit-modal,
+.transfer-modal,
+.withdraw-modal {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgb(28, 30, 50, 0.6);
+}
+
+.modal-card {
+	position: relative;
+	margin: auto;
+	margin-top: 10rem;
+	width: 70%;
+	background-color: var(--clr-bg);
+	box-shadow: var(--shadow);
+	padding: 10rem;
+	border-radius: var(--br-boxes);
+}
+
+.close-button {
+	position: absolute;
+	top: 4rem;
+	right: 4rem;
+}
+
+.modal h1 {
+	margin-bottom: 1em;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.input-group {
+	display: flex;
+	gap: 1.5rem;
+}
+
+label,
+.label {
+	font-size: var(--fs-form);
+	font-weight: var(--fw-400);
+}
+
+input,
+.fake-input {
+	height: 55px;
+	width: 100%;
+	background-color: var(--glass-bg);
+	border: none;
+	border-radius: var(--br-inputs);
+	font-size: var(--fs-form);
+	padding-inline-start: 54px;
+	color: #fff;
+	font-family: var(--font-text);
+}
+
+.input-icons > svg,
+.fake-input > svg {
+	position: absolute;
+	place-items: center;
+	margin-top: 0.7em;
+	margin-left: 0.5em;
+}
+
+#money-svg {
+	fill: none;
+}
+
+.modal button[type="button"] {
+	align-self: flex-end;
+	border: none;
+	border-radius: var(--br-btn);
+	color: #fff;
+	display: inline-block;
+	font-family: var(--font-text);
+	font-size: var(--fs-form);
+	font-weight: var(--fw-700);
+	margin-top: 1em;
+	padding: var(--padding-btn);
+}
+
+.inputs-amount {
+	width: 50%;
+}
+
+.error-text {
+	font-size: var(--fs-small);
+	font-weight: var(--fw-300);
+	color: var(--clr-pink);
+}
+
+.error-input {
+	border-color: var(--clr-pink);
+	border-width: 3px;
+	border-style: solid;
+}
+
+#error-text-transfer-firstname,
+#error-text-transfer-lastname,
+#error-text-transfer-bankname,
+#error-text-transfer-accountnumber,
+#error-text-transfer-amount,
+#error-text-deposit-firstname,
+#error-text-deposit-lastname,
+#error-text-deposit-bankname,
+#error-text-deposit-accountnumber,
+#error-text-deposit-amount,
+#error-text-withdraw-firstname,
+#error-text-withdraw-lastname,
+#error-text-withdraw-bankname,
+#error-text-withdraw-accountnumber,
+#error-text-withdraw-amount,
+#error-text-transfer-amount-invalid,
+#error-text-deposit-amount-invalid,
+#error-text-withdraw-amount-invalid,
+#success-transfer,
+#success-deposit,
+#success-withdraw {
+	display: none;
+}
+
+.success-massage {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.success-massage p {
+	color: var(--clr-green);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-300);
+	color: var(--clr-green);
+}
+
+/*  transfer modal  */
+#transfer-modal {
+	display: none;
+}
+
+.transfer-modal button[type="button"] {
+	background-image: linear-gradient(29deg, #f468ce 0%, #5849b9 100%);
+}
+
+/*  deposit modal  */
+#deposit-modal {
+	display: none;
+}
+
+.deposit-modal button[type="button"] {
+	background-image: linear-gradient(
+		29deg,
+		#40ecb0 0%,
+		#358fce 66.4%,
+		#5849b9 112.12%
+	);
+}
+
+/*  withdraw modal  */
+#withdraw-modal {
+	display: none;
+}
+
+.withdraw-modal button[type="button"] {
+	background-image: linear-gradient(29deg, #f5b43e 0%, #f468ce 98.66%);
+}
+
+.withdraw-modal .inputs-amount {
+	width: 100%;
+}
+
+.label {
+	margin-top: 2rem;
+}
+
+.fake-input {
+	position: relative;
+}
+
+.fake-input > svg {
+	left: 0;
+}
+
+#random-code {
+	display: inline-block;
+	margin-top: 0.6rem;
+}
+
+button:hover {
+	transform: scale(1.05);
+}
+button:active {
+	transform: scale(0.95);
+}
+
+a:hover {
+	transform: scale(1.05);
+}
+a:active {
+	transform: scale(0.95);
+}

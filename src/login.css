@@ -1,0 +1,296 @@
+:root {
+	--clr-yellow: #f5b43e;
+	--clr-pink: #f468ce;
+	--clr-green: #40ecb0;
+	--clr-blue: #358fce;
+	--clr-purple: #5849b9;
+	--glass-bg: rgba(255, 255, 255, 0.2);
+
+	--clr-bg: #1c1e32;
+	--clr-bg-1: #272a46;
+
+	--gdt-pink-yellow: linear-gradient(29deg, #f5b43e 0%, #f468ce 98.66%);
+	--gdt-green-purple: linear-gradient(
+		29deg,
+		#40ecb0 0%,
+		#358fce 66.4%,
+		#5849b9 112.12%
+	);
+	--gdt-pink-purple: linear-gradient(29deg, #f468ce 0%, #5849b9 100%);
+
+	--fs-big-title: 7.5rem;
+	--fs-title: 2.25rem;
+	--fs-subtitle: 1.75rem;
+	--fs-form: 1.5rem;
+	--fs-text: 1.125rem;
+	--fs-small: 1rem;
+
+	--fw-700: 700;
+	--fw-600: 600;
+	--fw-500: 500;
+	--fw-400: 400;
+	--fw-300: 300;
+
+	--letter-spacing: 0.12rem;
+
+	--padding-btn: 0.625rem 1.5rem;
+	--padding-link: 0.75rem 1rem;
+
+	--br-boxes: 1.25rem;
+	--br-inputs: 0.5rem;
+	--br-btn: 0.9rem;
+
+	--border: 3px solid #fff;
+	--border-glass: 0px 0.5px 0.5px 0px;
+
+	--font-title: "Red Hat Mono", monospace;
+	--font-text: "Red Hat Display", sans-serif;
+
+	--shadow: 4px 4px 19px #141520;
+}
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--clr-bg);
+	color: white;
+	font-family: var(--font-text);
+	height: calc(100vh - 5rem);
+	overflow-y: hidden;
+}
+
+.nav {
+	background-color: var(--clr-bg-1);
+	height: 5rem;
+}
+
+.flex-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-list {
+	list-style: none;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #fff;
+	padding: var(--padding-btn);
+	border: var(--border);
+	border-radius: var(--br-btn);
+	font-weight: var(--fw-700);
+}
+
+.nav-link:first-of-type {
+	margin-right: 2.5em;
+}
+
+.logo {
+	font-family: var(--font-title);
+	font-weight: var(--fw-700);
+}
+
+main {
+	height: 100%;
+	background-image: url(img/diamong-bg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left -420px top;
+}
+
+.container {
+	width: 85%;
+	max-width: 1150px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	vertical-align: middle;
+}
+
+.column {
+	margin: auto;
+}
+
+#iframe {
+	position: relative;
+	left: -150px;
+	width: 100%;
+	height: 100%;
+}
+
+.glass-bg {
+	background-color: var(--glass-bg);
+	border-width: var(--border-glass);
+	border-color: #fff;
+	border-style: solid;
+	box-shadow: var(--shadow);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	border-radius: var(--br-boxes);
+	padding: 5.125rem;
+	padding-bottom: 2rem;
+}
+
+.form-container {
+	position: relative;
+	z-index: 5;
+}
+
+.title {
+	font-family: var(--font-title);
+	font-size: var(--fs-big-title);
+	font-weight: var(--fw-700);
+	min-width: 6ch;
+	position: relative;
+	top: calc(var(--fs-big-title) / 2);
+	left: -40px;
+	z-index: 4;
+}
+
+.title::before {
+	content: "";
+	width: 123px;
+	aspect-ratio: 1 /1;
+	background-image: var(--gdt-green-purple);
+	position: absolute;
+	bottom: -30px;
+	left: -50px;
+	z-index: -2;
+	border-radius: 50%;
+}
+
+.title::after {
+	content: "";
+	width: 163px;
+	aspect-ratio: 1 /1;
+	background-image: var(--gdt-green-purple);
+	position: absolute;
+	bottom: -450px;
+	right: -90px;
+	z-index: -3;
+	border-radius: 50%;
+}
+
+.title2::before {
+	content: "";
+	width: 66px;
+	aspect-ratio: 1 /1;
+	background-image: var(--gdt-pink-yellow);
+	position: absolute;
+	bottom: 10px;
+	left: 35px;
+	z-index: -1;
+	border-radius: 50%;
+}
+
+.title2::after {
+	content: "";
+	width: 105px;
+	aspect-ratio: 1 /1;
+	background-image: var(--gdt-pink-purple);
+	position: absolute;
+	bottom: -390px;
+	right: -120px;
+	z-index: -1;
+	border-radius: 50%;
+}
+form,
+.field-username,
+.field-password {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+}
+
+form {
+	gap: 3.25rem;
+}
+
+label {
+	font-family: var(--font-title);
+	font-size: var(--fs-form);
+	font-weight: var(--fw-600);
+}
+
+.error-text {
+	font-size: var(--fs-small);
+	font-weight: var(--fw-300);
+	color: var(--clr-pink);
+}
+
+#error-text-username,
+#error-text-password {
+	display: none;
+}
+
+button {
+	font-weight: var(--fw-700);
+	font-size: var(--fs-form);
+	font-family: var(--font-text);
+	color: #fff;
+	display: inline-block;
+	align-self: flex-end;
+	background-image: linear-gradient(29deg, #f468ce 0%, #5849b9 100%);
+	padding: var(--padding-btn);
+	border: none;
+	border-radius: var(--br-btn);
+	cursor: pointer;
+	animation: all 50ms ease-in-out;
+}
+
+button:hover {
+	transform: scale(1.05);
+}
+button:active {
+	transform: scale(0.95);
+}
+
+a:hover {
+	transform: scale(1.05);
+}
+a:active {
+	transform: scale(0.95);
+}
+
+input {
+	height: 55px;
+	width: 100%;
+	background-color: var(--glass-bg);
+	border: none;
+	border-radius: var(--br-inputs);
+	font-size: var(--fs-form);
+	padding-inline-start: 54px;
+	color: #fff;
+	font-family: var(--font-text);
+}
+
+.error-input {
+	border-color: var(--clr-pink);
+	border-width: 3px;
+	border-style: solid;
+}
+
+svg {
+	position: absolute;
+	place-items: center;
+}
+
+.input-username svg {
+	margin: 11.5px;
+}
+
+.input-password svg {
+	margin: 17px 11.5px;
+}
